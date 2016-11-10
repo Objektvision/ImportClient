@@ -15,8 +15,8 @@ namespace ObjektvisionTestClient
     {
         //static ImportServer.ImportServerSoapClient server = new ImportServer.ImportServerSoapClient();
 
-        private static int brokerId = 1498;
-        private static string password = "5F3sTfTWxb9aCYQg";
+        private static int brokerId = 0;
+        private static string password = "";
         private static ImportServerSoapClient server;
         private static CookieContainer cookieCont;
 
@@ -36,6 +36,7 @@ namespace ObjektvisionTestClient
                 if (!Login())
                 {
                     Log("Login failed");
+                    Console.ReadLine();
                     return;
                 }
                 Log("Logged in as " + brokerId);
