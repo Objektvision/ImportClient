@@ -1,6 +1,0 @@
-c:\users\adam\documents\visual studio 2015\Projects\ObjektvisionTestClient\ObjektvisionTestClient\bin\Debug\ObjektvisionTestClient.exe.config
-c:\users\adam\documents\visual studio 2015\Projects\ObjektvisionTestClient\ObjektvisionTestClient\obj\Debug\ObjektvisionTestClient.csprojResolveAssemblyReference.cache
-c:\users\adam\documents\visual studio 2015\Projects\ObjektvisionTestClient\ObjektvisionTestClient\bin\Debug\ObjektvisionTestClient.exe
-c:\users\adam\documents\visual studio 2015\Projects\ObjektvisionTestClient\ObjektvisionTestClient\bin\Debug\ObjektvisionTestClient.pdb
-c:\users\adam\documents\visual studio 2015\Projects\ObjektvisionTestClient\ObjektvisionTestClient\obj\Debug\ObjektvisionTestClient.exe
-c:\users\adam\documents\visual studio 2015\Projects\ObjektvisionTestClient\ObjektvisionTestClient\obj\Debug\ObjektvisionTestClient.pdb
