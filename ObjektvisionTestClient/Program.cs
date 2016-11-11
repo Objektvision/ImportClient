@@ -13,8 +13,6 @@ namespace ObjektvisionTestClient
 {
     class Program
     {
-        //static ImportServer.ImportServerSoapClient server = new ImportServer.ImportServerSoapClient();
-
         private static int brokerId = 0;
         private static string password = "";
         private static ImportServerSoapClient server;
@@ -46,9 +44,24 @@ namespace ObjektvisionTestClient
                 Log("Number of objects: " + listOfObjects.Count);
 
                 Log();
-                //The leads for this customer, from the beginning of time (2000-01-01)
-                var leads = server.GetAdvertImpressionsList(new DateTime(2000,1,1), DateTime.MaxValue).ToList();
+                //The leads for this customer
+                //This function returns all new leads for all objects since the last time the function was run.
+                //To get a nice popup in the recieving system it might be a good idea to run this function every 10-15 minutes or so,
+                //otherwise once per day. Remember to store the data locally, as it will not be sent again once it has been sent.
+                var leads = server.GetLeadsByBrokerList(new int[brokerId]).ToList();
+                Log("Number of leads since last get: " + leads.Count);
                 foreach (var l in leads)
+                {
+                    Log();
+                    Log("Estate: " + l.ServerID);
+                    Log("Errand: " + l.Errand);
+                    Log("Message: " + l.Message);
+                }
+
+
+                //The impressions (visitor statistics) for the user/client
+                var impressions = server.GetAdvertImpressionsList(new DateTime(2000,1,1), DateTime.MaxValue).ToList();
+                foreach (var l in impressions)
                 {
                     Log("Estate: " + l.ServerID);
                     Log("Number of leads: " + l.Site[0].Impressions.Length);
