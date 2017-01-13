@@ -16,7 +16,7 @@ namespace ObjektvisionTestClient
         private static int brokerId = 0;
         private static string password = "";
         private static ImportServerSoapClient server;
-        private static CookieContainer cookieCont;
+        
 
         static void Main(string[] args)
         {
@@ -24,13 +24,9 @@ namespace ObjektvisionTestClient
         }
 
         public static void Run()
-        {
-            cookieCont = new CookieContainer();
+        {            
             using (server = new ImportServerSoapClient())
-            {
-                var behave = new CookieBehavior(cookieCont);
-                server.Endpoint.EndpointBehaviors.Add(behave);
-
+            {              
                 if (!Login())
                 {
                     Log("Login failed");
@@ -48,7 +44,7 @@ namespace ObjektvisionTestClient
                 //This function returns all new leads for all objects since the last time the function was run.
                 //To get a nice popup in the recieving system it might be a good idea to run this function every 10-15 minutes or so,
                 //otherwise once per day. Remember to store the data locally, as it will not be sent again once it has been sent.
-                var leads = server.GetLeadsByBrokerList(new int[brokerId]).ToList();
+                var leads = server.GetLeads().ToList();
                 Log("Number of leads since last get: " + leads.Count);
                 foreach (var l in leads)
                 {
