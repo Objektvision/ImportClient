@@ -221,6 +221,11 @@ namespace ObjektvisionTestClient
             display.Floor = 2;
             display.FloorsInBuilding = 4;
             display.Rooms = 5;
+            //Limited to 150 characters.
+            display.Description =
+                "A short selling description used in lists. If this is not given, we will take the first 150 characters from the ExtendedDescription";
+            display.ExtendedDescription =
+                "A much longer description can be entered here. Is used in the long description on the ad-pages.";
             display.Types =
                 new[]
                 {

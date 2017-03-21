@@ -10,3 +10,5 @@
 /ObjektvisionTestClient/obj/Debug
 /ObjektvisionTestClient/ObjektvisionTestClient.csproj.user
 /.vs/ObjektvisionTestClient/v14
+/ObjektvisionTestClient/server.wsdl/server.wsdl
+/ObjektvisionTestClient/Service References/ImportServer
